@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net452</TargetFramework>
+    <DebugType>embedded</DebugType>
+    <TargetName>$(AssemblyName).net</TargetName>
+    <AssemblyName>owo.dll</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="CitizenFX.Core">
+      <HintPath>C:\Users\Mike\Development\CitizenFX\CitizenFX.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy /y /d &quot;$(TargetPath)&quot; &quot;F:\RedM\usermaps\resources\trainer&quot;" />
+  </Target>
+
+</Project>
